@@ -5,7 +5,7 @@ inpaint:
   "image_path":
   "mask_path":
   "ip_adapter_image_path": 
-  "prompt":  "UV map, monkey head, Sci-Fi digital painting, high quality"
+  "prompt":  ""
   "negative_prompt": "strong light, Bright light, intense light, dazzling light, brilliant light, radiant light, Shade, darkness, silhouette, dimness, obscurity, shadow, glasses"
   "seed": -1
   "width": 1024

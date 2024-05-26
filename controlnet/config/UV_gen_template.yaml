@@ -2,7 +2,7 @@
 txt2img:
   "sd_model_key": "runwayml/stable-diffusion-v1-5"
   "ip_adapter_image_path": 
-  "prompt": "UVmap, (blue and white porcelain:1.3), teapot, high quality"
+  "prompt": ""
   "negative_prompt": "blur, low quality, noisy image, over-exposed"
   "seed": -1
   "width": 1024

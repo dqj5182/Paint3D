@@ -2,7 +2,7 @@
 txt2img:
   "sd_model_key": "runwayml/stable-diffusion-v1-5"
   "ip_adapter_image_path": 
-  "prompt": "turn around, monkey head, (Sci-Fi digital painting:1.5), colorful, painting, high quality"
+  "prompt": ""
   "negative_prompt": "strong light, Bright light, intense light, dazzling light, brilliant light, radiant light, Shade, darkness, silhouette, dimness, obscurity, shadow, glasses"
   "seed": 1713428430
   "width": 1024
