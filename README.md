@@ -40,8 +40,11 @@ The code is tested on Centos 7 with PyTorch 1.12.1 CUDA 11.6 installed. Please f
 # install python environment
 conda env create -f environment.yaml
 
+# install pytorch
+conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.6 -c pytorch -c nvidia
+
 # install kaolin
-pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/{TORCH_VER}_{CUDA_VER}.html
+pip install kaolin==0.15.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.0_cu121.html
 ```
 
 
@@ -53,21 +56,12 @@ To use the other ControlNet models, please download it from the [hugging face pa
 
 Then, you can generate coarse texture via:
 ```
-python pipeline_paint3d_stage1.py \
- --sd_config controlnet/config/depth_based_inpaint_template.yaml \
- --render_config paint3d/config/train_config_paint3d.py \
- --mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
- --outdir outputs/stage1
+python pipeline_paint3d_stage1.py  --sd_config controlnet/config/depth_based_inpaint_template.yaml  --render_config paint3d/config/train_config_paint3d.py  --mesh_path data/MOW/data/watertight_models/board_food_v_LUS1jeTGc68_frame000082.obj --texture_path data/MOW/data/images/board_food_v_LUS1jeTGc68_frame000082.jpg  --outdir outputs/board_food_v_LUS1jeTGc68_frame000082_stage1
 ```
 
 and the refined texture via:
 ```
-python pipeline_paint3d_stage2.py \
---sd_config controlnet/config/UV_based_inpaint_template.yaml \
---render_config paint3d/config/train_config_paint3d.py \
---mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
---texture_path outputs/stage1/res-0/albedo.png \
---outdir outputs/stage2
+python pipeline_paint3d_stage2.py --sd_config controlnet/config/UV_based_inpaint_template.yaml  --render_config paint3d/config/train_config_paint3d.py  --mesh_path data/MOW/data/watertight_models/board_food_v_LUS1jeTGc68_frame000082.obj --texture_path outputs/board_food_v_LUS1jeTGc68_frame000082_stage1/res-0/albedo.png  --outdir outputs/board_food_v_LUS1jeTGc68_frame000082_stage2
 ```
 
 
